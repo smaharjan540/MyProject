@@ -1,5 +1,5 @@
-# Rascal-Client
-Ionic client for Rascal project
+# My-Project
+Ionic client for My-project
 
 Getting started with this project will need the following installed:
 
