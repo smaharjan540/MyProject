@@ -1,0 +1,13 @@
+.doctor-info {
+  form {
+    .col {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    textarea {
+      resize: none;
+      height: $font-size-body * 6;
+    }
+  }
+}

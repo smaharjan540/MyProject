@@ -1,0 +1,117 @@
+<ion-view class="file-upload">
+    <ion-content>
+        <rascal-header></rascal-header>
+        <div class="row">
+            <div class="col col-25">
+                <left-pane></left-pane>
+            </div>
+            <div class="col col-65">
+                <div class="row">
+                    <div class="col">
+                        <h2>INSURANCE</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Would you like to upload your patient's insurance information?
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-unselected" ng-click="togglePatientInsuranceUpload()" ng-class="{'selected': patientInsuranceUpload}">Yes</button>
+                        <span class="btn-space"></span>
+                        <button class="btn btn-unselected" ng-click="togglePatientInsurance()" ng-class="{'selected': patientInsurance}">No</button>
+                        <span class="btn-space"></span>
+                        <span class="chkbox-btn">
+                            <img ng-click="filesUploadCheck()" ng-src="{{ selectYes ? 'images/checkbox-full.svg' : 'images/checkbox-empty.svg' }}" class="checkboxImg" />
+                            <span class="checkboxText">Use the file(s) I just uploaded</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                </div>
+                <div ng-hide="(patientInsurance || patientInsuranceUpload)">
+                    <div class="col">
+                        We'll need the patient's...
+                        <br/> - Insurance Provider
+                        <br/> - Insurance Contract or Policy Number
+                        <br/> - Insurance Phone Number
+                        <br/>
+                        <br/> Note: You won't need to upload the same document again if it has information that applies to multiple sections. So if this is the case, please check "Use the file(s) I just uploaded". You can upload up to four documents.
+                    </div>
+                </div>
+                <div ng-if="patientInsuranceUpload">
+                    <div class="row">
+                        <div class="col">
+                            <uploadfiles></uploadfiles>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span>Note: Please load only files with the following filename extensions: .pdf, prn, .jpg, .jpeg, .tif, .tiff, .bmp</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div ng-repeat="file in files track by $index">
+                            <div class="fileImage" ng-hide="fileImage{{$index}}">
+                                <i class="icon ion-android-delete fileDeleteIcon" ng-click="showConfirm($index,'{{file.fileName}}')"></i>
+                                <i class="icon ion-document-text fileImgIcon"></i>
+                                <br/>
+                                <span class="fileNameTxt">{{file.fileName | truncate : 30}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="patientInsurance">
+                    <div class="row">
+                        <div class="col col-30">
+                            Insurance Provider Name
+                        </div>
+                        <div class="col col-30">
+                            <label>
+                                <input type="text" ng-model="data.name" class="input-text-width-30" ng-change="onInsuranceEditChng();" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-30">
+                            Contract or Policy Number
+                        </div>
+                        <div class="col col-20">
+                            <label>
+                                <input type="text" ng-model="data.policyNumber" class="input-text-width-30" ng-change="onInsuranceEditChng();" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-30">
+                            Phone Number
+                        </div>
+                        <div class="col col-20">
+                            <label>
+                                <input type="text" phone-input ng-model="data.phoneNumber" placeholder="(XXX) XXX-XXXX" class="input-text-width-30" ng-change="onInsuranceEditChng();" ng-focus="onPhoneNumberFocus();" ng-class="{ 'has-error' : !phoneValid }" />
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row error-row">
+                        <div class="col col-30">
+                            &nbsp;
+                        </div>
+                        <div class="col col-40">
+                            <span ng-hide="phoneValid">Please enter a valid phone number</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rascal-footer-spacer"></div>
+    </ion-content>
+    <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne" callback="validate()"></rascal-footer>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-modal-view class="tnc-modal">
+  <ion-header-bar class="modal-header">
+    <div class="col col-offset-10 col-bottom">
+      <span class="title-text">{{ legal.title }}</span>
+    </div>
+    <div class="col">
+      <div class="close-icon" ng-click="closeModal()">
+        <i class="icon ion-android-close"></i>
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content class="has-header has-footer">
+    <div class="col col-80 col-offset-10">
+      <div>Effective {{ legal.effective }}</div>
+      <div ng-include="legal.content"></div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="modal-footer">
+    <div class="row row-bottom">
+      <div class="col btn-center">
+        <button class="btn btn-unselected" ng-click="closeModal()">Close</button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-modal-view>

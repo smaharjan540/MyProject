@@ -1,0 +1,112 @@
+<ion-view class="patient-info">
+  <ion-content>
+    <rascal-header></rascal-header>
+    <div class="row">
+      <div class="col col-25">
+        <left-pane></left-pane>
+      </div>
+      <div class="col col-65">
+        <div class="row">
+          <div class="col">
+            <h2>PATIENT INFORMATION</h2>
+          </div>
+        </div>
+        <form ng-model-options="{ updateOn: 'blur' }">
+          <div class="row">
+            <div class="col col-30">
+              <span>Patient Full Name</span>
+            </div>
+            <div class="col col-40">
+              <label>
+                <input restrict-input type="text" ng-model="form.name" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+              Primary Street Address
+            </div>
+            <div class="col col-40">
+              <label>
+                <input restrict-input type="text" ng-model="form.address1" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+            </div>
+            <div class="col col-40">
+              <label>
+                <input restrict-input type="text" ng-model="form.address2" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+              City
+            </div>
+            <div class="col col-40">
+              <label>
+                <input restrict-input type="text" ng-model="form.city"/>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+              State
+            </div>
+            <div class="col col-10">
+              <label>
+                <input restrict-input type="text" ng-model="form.state" maxlength="2" ng-focus="onStateFocus()" ng-class="{ 'has-error' : !stateValid }" state-input capitalize/>
+              </label>
+            </div>
+            <div class="col col-10 col-offset-5 text-right">
+              ZIP
+            </div>
+            <div class="col col-15">
+              <label>
+                <input restrict-input type="text" ng-model="form.zip" maxlength="5" numbers-only ng-focus="onZipFocus()" ng-class="{ 'has-error' : !zipValid }"/>
+              </label>
+            </div>
+          </div>
+          <div class="row error-row">
+            <div class="col col-30">
+              &nbsp;
+            </div>
+            <div class="col col-25">
+              <span ng-hide="stateValid">Please enter a valid state</span>
+            </div>
+            <div class="col col-30">
+              <span ng-hide="zipValid">Please enter a valid zip code</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+              Date of Birth
+            </div>
+            <div class="col col-30">
+              <label>
+                <input id="patientinfodob" type="text" ng-model="form.dob" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+              Gender
+            </div>
+            <div class="col">
+              <button class="btn" ng-class="selectionClass('Male')" ng-click="pickMale()">Male</button>
+              <span class="btn-space"></span>
+              <button class="btn" ng-class="selectionClass('Female')" ng-click="pickFemale()">Female</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col col-10">
+        &nbsp;
+      </div>
+    </div>
+    <div class="rascal-footer-spacer"></div>
+  </ion-content>
+  <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne" callback="validate()"></rascal-footer>
+</ion-view>

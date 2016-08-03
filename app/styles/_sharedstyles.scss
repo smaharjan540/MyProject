@@ -1,0 +1,446 @@
+/* Global styles */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.6vw;
+    line-height: 1.4;
+    /* http://artequalswork.com/posts/fluid-type/ */
+    color: #000000;
+}
+.col-1 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 1%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 1%;
+    -ms-flex: 0 0 1%;
+    flex: 0 0 1%;
+    max-width: 1%;
+}
+.col-4 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 4%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 4%;
+    -ms-flex: 0 0 4%;
+    flex: 0 0 4%;
+    max-width: 4%;
+}
+.col-5 {
+     -webkit-box-flex: 0;
+     -webkit-flex: 0 0 5%;
+     -moz-box-flex: 0;
+     -moz-flex: 0 0 5%;
+     -ms-flex: 0 0 5%;
+     flex: 0 0 5%;
+     max-width: 5%;
+ }
+.col-10 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 10%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 10%;
+    -ms-flex: 0 0 10%;
+    flex: 0 0 10%;
+    max-width: 10%;
+}
+.col-14 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 14%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 14%;
+    -ms-flex: 0 0 14%;
+    flex: 0 0 14%;
+    max-width: 14%;
+}
+.col-17 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 17%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 17%;
+    -ms-flex: 0 0 17%;
+    flex: 0 0 17%;
+    max-width: 17%;
+}
+.col-20 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 20%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.col-25 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 25%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 25%;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.col-23 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 23%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 23%;
+    -ms-flex: 0 0 23%;
+    flex: 0 0 23%;
+    max-width: 23%;
+}
+.col-24 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 24%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 24%;
+    -ms-flex: 0 0 24%;
+    flex: 0 0 24%;
+    max-width: 24%;
+}
+.col-30 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 30%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+.col-33 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 33%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 33%;
+    -ms-flex: 0 0 33%;
+    flex: 0 0 33%;
+    max-width: 33%;
+}
+.col-35 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 35%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 35%;
+    -ms-flex: 0 0 35%;
+    flex: 0 0 35%;
+    max-width: 35%;
+}
+.col-37 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 37%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 37%;
+    -ms-flex: 0 0 37%;
+    flex: 0 0 37%;
+    max-width: 37%;
+}
+.col-40 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 40%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+}
+.col-41 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 41%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 41%;
+    -ms-flex: 0 0 41%;
+    flex: 0 0 41%;
+    max-width: 41%;
+}
+.col-45 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 45%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 45%;
+    -ms-flex: 0 0 45%;
+    flex: 0 0 45%;
+    max-width: 45%;
+}
+.col-48 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 48%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 48%;
+    -ms-flex: 0 0 48%;
+    flex: 0 0 48%;
+    max-width: 48%;
+}
+.col-50 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.col-55 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 55%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 55%;
+    -ms-flex: 0 0 55%;
+    flex: 0 0 55%;
+    max-width: 55%;
+}
+.col-56 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 56%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 56%;
+    -ms-flex: 0 0 56%;
+    flex: 0 0 56%;
+    max-width: 56%;
+}
+.col-60 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 60%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 60%;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+.col-61 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 61%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 61%;
+    -ms-flex: 0 0 61%;
+    flex: 0 0 61%;
+    max-width: 61%;
+}
+.col-65 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 65%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 65%;
+    -ms-flex: 0 0 65%;
+    flex: 0 0 65%;
+    max-width: 65%;
+}
+.col-66 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 66%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 66%;
+    -ms-flex: 0 0 66%;
+    flex: 0 0 66%;
+    max-width: 66%;
+}
+.col-70 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 70%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 70%;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;
+}
+
+.col-95 {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 95%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 95%;
+    -ms-flex: 0 0 95%;
+    flex: 0 0 95%;
+    max-width: 95%;
+}
+
+/* home */
+.initial-msg {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8vh;
+}
+@media all and (min-width: 2560px) {
+    /* Galaxy 12.2 is 2560x1600 resolution */
+    .initial-msg {
+        font-size: 60px;
+    }
+}
+@media all and (max-width: 2559px) {
+    .initial-msg {
+        font-size: 2.4vw;
+    }
+}
+.detail-msg {
+    font-size: 1.4vw;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: #2e2e2f;
+}
+@media all and (min-width: 2560px) {
+    /* Galaxy 12.2 is 2560x1600 resolution */
+    .detail-msg {
+        font-size: 35px;
+    }
+}
+/* Button CSS */
+figure.btn_outer {
+    width: 100%;
+    margin: 8px auto;
+}
+div.btn_wrapper {
+    width: 100%;
+    padding-bottom: 25%;
+    /* 4:1 aspect ratio */
+    position: relative;
+    border-radius: 8px;
+}
+div.btn_wrapper_20 {
+    padding-bottom: 20%;
+    /* 5:1 aspect ratio */
+}
+div.btn_wrapper_33 {
+    padding-bottom: 33%;
+    /* 3:1 aspect ratio */
+}
+div.btn_wrapper > button.common_button {
+    position: absolute;
+    font-family: Verdana;
+    cursor: pointer;
+    cursor: hand;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 1.6vw;
+    line-height: 1.6vw;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 8px;
+    min-width: inherit;
+    min-height: inherit;
+    opacity: inherit;
+    width: 100%;
+}
+div.btn_wrapper > button.lightgray_button {
+    /* impact immediate children only */
+    color: #346170;
+    background-color: #ededed;
+    border: solid 1px #346170;
+}
+div.btn_wrapper > button.beige_button {
+    /* impact immediate children only */
+    color: #346170;
+    background-color: #f4f2e6;
+    border: solid 1px #346170;
+}
+div.btn_wrapper > button.darkgray_button {
+    /* impact immediate children only */
+    color: #cdcccc;
+    background-color: #9b9b9b;
+    border: solid 1px #9b9b9b;
+}
+div.btn_wrapper > button.darkblue_button {
+    /* impact immediate children only */
+    color: white;
+    background-color: #346170;
+    border: solid 1px #346170;
+}
+div.btn_wrapper > button.red_button {
+    /* impact immediate children only */
+    color: #f51c0f;
+    border: solid 1px #f51c0f;
+    background-color: #FFFFFF;
+}
+div.btn_wrapper > button.item_selected {
+    background-color: #346170;
+    color: #ededed;
+}
+@media all and (min-width: 2560px) {
+    /* Galaxy 12.2 is 2560x1600 resolution */
+    .btn_wrapper {
+        font-size: 40px;
+    }
+}
+
+/* Common Text styling */
+.text_PageTitle {
+    font-family: Verdana-Bold;
+    font-size: 2.3vw;
+    letter-spacing: 0.7px;
+    color: #2e2e2f;
+}
+.text_Sub {
+    font-family: Verdana;
+    font-size: 1.5vw;
+    color: #2e2e2f;
+    &.bold {
+      font-weight:bold;
+    }
+    /*&:not(.italicize) {
+      margin-top: 0.5vw;
+      margin-bottom: 0.2vw;
+    }*/
+}
+
+/* Site Wide `input` styling
+for specific cases you should only need to change the width
+*/
+input {
+    height: 2.9vw;
+}
+/*
+input[type=checkbox] {
+    width: 2.9vw;
+    height: 2.9vw; //to beat out ionic.css
+    &::before {
+        border-radius: 4px;
+    }
+    &::after {
+        width: 1.4vw;
+        height: 0.6vw;
+    }
+    &:checked::before {
+        background: #346170;
+        border-color: #346170;
+    }
+}
+*/
+.col-right-pad {
+    margin-right: 3%;
+}
+input[placeholder].input {
+    height: 2.9vw;
+    font-size: 1.15vw;
+    border: solid 0.5px #346170;
+    padding-left: 0.5vw;
+    border-radius: 5px;
+}
+
+.rascal_footer_spacer {
+    padding-bottom: 13vh;
+}
+
+//
+// Error Messages.
+//
+
+div.text_error {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1vw;
+    color: #9b9b9b;
+    color: #bd4949;
+    width: 100%;
+    height: 1vh;
+}
+
+input.has-error {
+  border-color: #bd4949 !important;
+}
+
+.errmsg-show {
+  display: block;
+}
+
+.errormsg-hide {
+  display: none;
+}

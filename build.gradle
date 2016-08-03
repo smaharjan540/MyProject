@@ -1,0 +1,236 @@
+import org.gradle.api.tasks.Exec
+import org.apache.tools.ant.taskdefs.condition.Os
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies { // https://github.com/srs/gradle-grunt-plugin
+    classpath "com.moowork.gradle:gradle-node-plugin:0.12"
+    classpath "com.moowork.gradle:gradle-grunt-plugin:0.12"
+  }
+}
+
+apply plugin: 'com.moowork.grunt'
+apply plugin: 'maven-publish'
+
+node {
+    version = '5.10.1' // Version of node to use.
+    download = true // Enabled the automatic download. False is the default (for now).
+}
+
+if (project.hasProperty('prod')) {
+    apply from: 'gradle/profile_prod.gradle'
+} else {
+    apply from: 'gradle/profile_dev.gradle'
+}
+
+/*
+ * Setup
+ */
+ 
+task npm(type: Exec) {
+   group = "Build"
+   description = "Installs all Node.js dependencies defined in package.json"
+   commandLine = ["npm", "install"]
+   inputs.file "package.json"
+   outputs.dir "node_modules"
+}
+
+/*
+ * Common Deployment
+ */
+ 
+task gruntCLI(type: Exec) {
+   group = "Build"
+   description = "Installs Grunt CLI locally"
+   commandLine = ["gradle", "installGrunt"]
+   outputs.dir "node_modules"
+}
+
+task bower(type: Exec) {
+   group = "Build"
+   description = "Installs all Bower dependencies defined in bower.json"
+   commandLine = ["bower", "install"]
+   inputs.file "bower.json"
+   outputs.dir "app/bower_components"
+}
+
+// NOTE: This should no longer be used, instead use moowork grunt plugin (e.g. gradle grunt_build)
+class GruntTask extends Exec {
+   private String gruntExecutable = Os.isFamily(Os.FAMILY_WINDOWS) ? "grunt.cmd" : "grunt"
+   def gruntArgs = ""
+   public GruntTask() {
+       super()
+       this.setExecutable(gruntExecutable)
+   }
+   public void setGruntArgs(String gruntArgs) {
+       this.args = "$gruntArgs".trim().split(" ") as List
+   }
+} 
+
+/*
+ * Static Deployment
+ */
+ 
+task cleanStaticContent() {
+  
+  // Configuration Phase.
+  outputs.upToDateWhen { false }
+  
+  doLast { // Execution Phase.
+    FileTree tree = fileTree (dir: "${project.projectDir}${File.separator}www");
+    tree.each { File file ->
+      delete(file)
+    }
+    delete "${project.projectDir}${File.separator}www"
+    delete "${project.projectDir}${File.separator}distributions"
+    println "Cleaned up directory: ${project.projectDir}${File.separator}www"    
+  }
+}
+
+task makeStaticContentDir(type: Exec) {
+  
+  // Configuration Phase.
+  outputs.upToDateWhen { false }
+  group = "Build"
+  description = "Make destination www folder"
+  commandLine = ["mkdir", "${project.projectDir}${File.separator}www"]
+  
+  doLast { // Execution Phase.
+    println "Created directory: ${project.projectDir}${File.separator}www"
+  }
+}
+
+task buildStaticContent(type: GruntTask) { // Puts static content to www folder.
+
+  // Configuration Phase.
+  outputs.upToDateWhen { false }
+   args = ["init"]
+   
+   doLast { // Execution Phase.
+     println "Finished deploying to folder: ${project.projectDir}${File.separator}www"
+   }
+}
+
+task zipUpStaticContent( type: Zip ) {
+  
+  // Configuration Phase.
+  outputs.upToDateWhen { false }  
+  from (file('www/'))
+  include '**/*'
+  archiveName 'www.zip'
+  into '.' // This specifies path in the archive (e.g. 'www').
+  destinationDir file("${project.projectDir}${File.separator}distributions")
+  
+  doLast {
+    println "Zipped up ${project.projectDir}${File.separator}www to ${project.buildDir}${File.separator}distributions"
+  }
+}
+
+// Build static dependencies.
+zipUpStaticContent.dependsOn buildStaticContent
+buildStaticContent.dependsOn makeStaticContentDir
+makeStaticContentDir.dependsOn cleanStaticContent
+cleanStaticContent.dependsOn bower
+bower.dependsOn npmInstall
+npmInstall.dependsOn installGrunt
+
+/*
+ * APK Deployment
+ */
+
+task ionicInstall( type: Exec ) {
+   group = "Build"
+   description = "Install Ionic & Cordova"
+   commandLine = ["npm", "install", "cordova@6.1.1", "ionic@1.7.14"]
+   outputs.dir "node_modules"
+}
+
+task ionicAddAndroid( type: Exec ) {
+   group = "Build"
+   description = "Install Android Platform"
+   commandLine = ["ionic", "platform", "add", "android"]
+   outputs.dir "node_modules"
+}
+
+task gruntBuild(type: GruntTask) {
+   group = "Build"
+   description = "Build Ionic project"
+   gruntArgs = "build"
+}
+
+task buildAndroid(type: GruntTask) {
+   args = ["build:android"]
+}
+
+// Build Android specific platform.
+// buildAndroid.dependsOn grunt_clean
+// grunt_clean.dependsOn ionicAddAndroid
+// ionicAddAndroid.dependsOn ionicInstall
+// ionicInstall.dependsOn bower
+// bower.dependsOn npmInstall
+// npmInstall.dependsOn installGrunt
+
+buildAndroid.dependsOn grunt_clean
+grunt_clean.dependsOn bower
+bower.dependsOn npmInstall
+npmInstall.dependsOn installGrunt
+
+/*
+ * Publishing Task
+ */
+ 
+ext {
+    repoUser = System.env["nexus_user"] ?: "NOT_SET"
+    repoPassword = System.env["ci_cred"] ?: "NOT_SET"
+    coporateRepoUrl = System.env["nexus_url"]?: "NOT_SET"
+    buildNumber = System.env.BUILD_NUMBER ?: "NOT_SET"
+    snapshot = "-SNAPSHOT"
+}
+
+group = 'com.cardinalhealth.rascalclient'
+version = "0.1.${buildNumber}${snapshot}" // "0.1.19-SNAPSHOT" 
+
+task copyAPK( type: Copy ) {
+  from(file("${project.projectDir}${File.separator}platforms/android/build/outputs/apk"))
+  into(file("${project.buildDir}${File.separator}distributions"))
+  include('*.apk')
+}
+
+publishing {
+  
+    println "Started executing publishing task to url: ${coporateRepoUrl} + ${coporateRepoPath} with: ${repoUser}"
+
+    publications {
+        localPublish(MavenPublication) {
+          artifact(zipUpStaticContent) {
+          }
+          // artifact(file("${project.buildDir}${File.separator}distributions/android-debug.apk")) {
+          //   classifier = 'rascalclient'
+          // }
+          // artifact(file("${project.buildDir}${File.separator}distributions/android-debug-unaligned.apk")) {
+          //   classifier = 'rascalclient-unaligned'
+          // }          
+        }
+    }
+    repositories {
+        maven {
+            // url  "file:${project.projectDir}/artifacts"
+            url  coporateRepoUrl + coporateRepoPath
+
+            credentials {
+                username = repoUser
+                password = repoPassword
+            }            
+        }
+    }
+    
+    println "Finished executing publishing task"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.13'
+}

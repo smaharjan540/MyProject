@@ -1,0 +1,24 @@
+<ion-view class="thanks">
+    <ion-content>
+        <img class="logo-alt" src="images/MedConnectLogoWhite.svg"/>
+        <div class="row spacer">
+            &nbsp;
+        </div>
+        <div class="row">
+            <div class="col-67 col-offset-20">
+                <p class="thanks-msg">{{thanksCopy}}</p>
+                <div class="col-25">
+                    <button class="btn btn-nav btn-wide" ng-click="startAgain()">{{buttonText}}</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-67 col-offset-20">
+                <p class="note-msg">Note: This screen will automatically return to the home screen after 30 seconds.</p>
+                <p class="disclaimer">Suppliers identified by MedConnect® may be affiliated with Cardinal Health. MedConnect® is a service and is not the provider of medical supplies. The submission of this information does not guarantee payment, coverage or denial by your health insurance. Each request requires insurance verification for further review of coverage.</p>
+            </div>
+        </div>
+        <div class="rascal-footer-spacer"></div>
+    </ion-content>
+    <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne"></rascal-footer>
+</ion-view>

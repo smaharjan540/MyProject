@@ -1,0 +1,10 @@
+<div class="row pad-top-2">
+  <div ng-controller="UploadCtrl">
+    <form>
+        <label for="files">
+            <span class="btn btn-unselected" ng-class="exceedFileNumber()?'btn-opacity':''">Upload file from your PC...</span>
+            <input style="visibility: hidden; position: absolute;" ng-disabled="exceedFileNumber()" id="files" type="file" file-select="onFileSelect($files)" on-file-select="getFile(data)" accept=".pdf, prn, .jpg, .jpeg, .tif, .tiff, .bmp">
+        </label>
+    </form>
+  </div>
+</div>

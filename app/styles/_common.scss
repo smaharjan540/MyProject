@@ -1,0 +1,236 @@
+body {
+  font-family: $font-family;
+  font-size: $font-size-body;
+  line-height: 1.2;
+  color: $font-color;
+  background-color: $background;
+}
+
+@media all and (max-width: 2560px) {
+  font-size: $font-size-max;
+}
+
+// Text styles
+h2 {
+  font-size: $font-size-header;
+  margin-bottom: $font-size-header;
+}
+
+a {
+  font-weight: bold;
+  color: $button-nav-continue;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 2px solid $button-nav-continue;
+}
+
+p {
+  margin-bottom: $font-size-body;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.emphasized {
+  font-style: italic;
+  font-family: $font-family-bolder;
+}
+
+.title-text {
+  font-size: $font-size-title;
+}
+
+.flavor-text {
+  font-family: $font-family-bolder;
+  font-size: $font-size-small;
+  color: $font-color-light;
+}
+
+// Button styles
+.btn {
+  border-radius: $button-border-radius;
+  font-size: $font-size-body;
+  padding: $font-size-body/2 $font-size-body;
+  font-family: $font-family-bolder;
+  border: solid $button-border-size;
+
+  &.btn-unselected {
+    background-color: $button-unselected;
+    border-color: $button-border;
+    color: $font-color;
+  }
+  &.btn-unselected:focus, &.btn-unselected:active, &.btn-unselected:hover {
+    background-color: $button-focus;
+    border-color: $button-border;
+    color: $font-color;
+  }
+  &.btn-selected {
+    background-color: $button-selected;
+    border-color: $button-border;
+    color: $button-unselected;
+  }
+  &.btn-nav {
+    background-color: $button-nav-continue;
+    border-color: $button-nav-continue;
+    color: $button-nav-text;
+    font-weight: bold;
+  }
+  &.btn-nav:focus, &.btn-nav:active, &.btn-nav:hover {
+    background-color: $button-nav-focus;
+    border-color: $button-nav-focus;
+  }
+  &.btn-nav:disabled {
+    background-color: $button-nav-disabled;
+    border-color: $button-nav-disabled;
+    color: $button-nav-text;
+  }
+  &.btn-full {
+    width: 100%;
+  }
+  &.btn-wide {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}
+
+// Button positioning
+.btn-right {
+  .btn {
+    display: table;
+    margin: 0 0 0 auto;
+  }
+}
+.btn-center {
+  .btn {
+    display: table;
+    margin: 0 auto;
+  }
+}
+.btn-space {
+  margin-right: 1.1vw;
+}
+
+.btn-opacity{
+  opacity: 0.3;
+}
+
+// Form styles
+form {
+  .col {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+input[type="text"], input[type="email"], input[type="date"], textarea {
+  padding-left: 8px;
+  border: 1px solid $input-border;
+  border-radius: 0.4vw;
+  width: 100%;
+  font-family: $font-family-bolder;
+}
+
+@-moz-document url-prefix() {
+    input[type="text"], input[type="date"], input[type="email"]{
+        border: 1px solid #5d5d5d;
+        padding: 0;
+        padding-left: 0.5vw;
+        height: 2vw;
+    }
+}
+
+textarea {
+  resize: none;
+}
+
+input.has-error {
+  border-color: $error;
+}
+
+.error-row {
+  font-family: $font-family-bolder;
+  font-size: $font-size-small;
+  color: $error;
+
+  .col {
+    padding: 0 0 0 5px;
+  }
+}
+
+//Spacing styles
+.spacer {
+  height: 6vh;
+}
+
+.rascal-footer-spacer {
+  padding-bottom: $footer-size;
+}
+
+.right-align {
+  justify-content: flex-end;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+//Grid system styles
+$offsets: (2 5 7 30 60);
+@each $offset in $offsets {
+  .col-offset-#{$offset} {
+    margin-left: $offset * 1%;
+  }
+}
+$right-offsets: (5);
+@each $offset in $right-offsets {
+  .col-offset-right-#{$offset} {
+    margin-right: $offset * 1%;
+  }
+}
+$widths: (5 15 30 40 45 60 65 70);
+@each $width in $widths {
+  .col-#{$width} {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 $width * 1%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 $width * 1%;
+    -ms-flex: 0 0 $width * 1%;
+    flex: 0 0 $width * 1%;
+    max-width: $width * 1%;
+  }
+}
+
+// Alternate header classes used in landing and thanks pages
+.red-banner {
+  background-image: url("../images/redSweepBand.svg");
+  background-size: 101vw;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+.logo-alt {
+  width:25vw;
+  margin:2.7vw 0 1.2vw 8vw;
+}
+
+// Modal styles
+.close-icon {
+  color: $button-footer-disabled-text;
+  font-size: 3vw;
+  float: right;
+  margin: 0.6vw 1vw -0.8vw 0;
+  cursor: pointer;
+}
+
+.quit-modal, .timeout-modal, .error-modal {
+  width: 40%;
+  height: 36%;
+  margin-left: 10%;
+}

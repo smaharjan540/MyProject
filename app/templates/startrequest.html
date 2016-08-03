@@ -1,0 +1,40 @@
+<ion-view class="start-request">
+  <ion-content>
+    <rascal-header></rascal-header>
+    <div class="row">
+      <div class="col col-25"></div>
+      <div class="col col-75">
+        <div class="row">
+          <div class="col">
+            <h2>START</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>To get started, please tell us about yourself.</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button class="btn" ng-class="selectionClass('patient')" ng-click="setSelected('patient')">I am a patient</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-20">
+            <button class="btn" ng-class="selectionClass('caregiver')" ng-click="setSelected('caregiver')">I am a caregiver</button>
+          </div>
+          <div class="col vertical-center">
+            <span class="flavor-text">(Select this if you are completing for someone else)</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" ng-if="!isInStore">
+            <button class="btn" ng-class="selectionClass('nurse')" ng-click="setSelected('nurse')">I am a healthcare professional</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rascal-footer-spacer"></div>
+  </ion-content>
+  <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne"></rascal-footer>
+</ion-view>

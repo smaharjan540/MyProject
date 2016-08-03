@@ -1,0 +1,49 @@
+.confirm-delete-modal {
+  $header-height: $font-size-body * 6;
+  width: 35%;
+  height: 35%;
+  margin-left: 10%;
+  margin-top: 7%;
+
+  .modal-header {
+    height: $header-height - 2;
+    border: 0 !important;
+    background-image: none !important;
+    border-bottom: none !important;
+  }
+  .modal-footer {
+    height: $header-height - 3;
+    border: 0 !important;
+    background-image: none !important;
+    border-bottom: none !important;
+    margin-bottom: 2vw;
+  }
+  .has-header {
+    top: $header-height - 2;
+  }
+  .has-footer {
+    bottom: $header-height - 2;
+  }
+  .titleTxt {
+    font-size: 1.4vw;
+  }
+  .errorContent {
+    font-size: 1vw;
+  }
+  .btn-confirm {
+    background-color: #65b0aa;
+    border-color: #65b0aa;
+    color: #ffffff;
+  }
+  .btn-confirm:hover {
+    background-color: #a8cd96;
+    border-color: #a8cd96;
+    color: #ffffff;
+  }
+  .btn-cancel {
+    background-color: #ffffff;
+  }
+  .btn-cancel:hover {
+    background-color: #ebe1d1;
+  }
+}

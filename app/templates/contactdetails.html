@@ -1,0 +1,71 @@
+<ion-view class="contact-details">
+  <ion-content>
+    <rascal-header></rascal-header>
+    <div class="row">
+      <div class="col col-25">
+        <left-pane></left-pane>
+      </div>
+      <div class="col col-65 aligned-header">
+        <h2>CONTACT DETAILS</h2>
+        <div class="row">
+          <div class="col">
+            What's the best number to contact?
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-30">
+            <label>
+              <input type="text" ng-model="data.phoneNumber" phone-input placeholder="(xxx) xxx-xxxx" ng-blur="onBlurPhoneNumber()" ng-focus="onFocusPhoneNumber()" ng-class="{ 'has-error' : !phoneValid }">
+            </label>
+          </div>
+          <div class="col col-60">
+            <label ng-show="isCaregiver">
+              <input type="text" ng-model="data.caregiverName" restrict-input placeholder="Caregiver name (optional)" maxlength="128" ng-blur="onBlurCaregiver()">
+            </label>
+          </div>
+        </div>
+        <div class="row error-row">
+          <div class="col">
+            <span ng-hide="phoneValid">Please enter a valid phone number</span>
+          </div>
+          <div class="col">
+            &nbsp;
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            What's the best time to contact you (weekdays)?<br/>
+            <span class="italic">Select all that apply.</span>
+          </div>
+        </div>
+        <div class="row" ng-repeat="time in contactTimes">
+          <div class="col col-30">
+            <checkbox value="data[time.id]" label="time.name" subtext="time.time" ng-click="clickTime()"></checkbox>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>Please provide an email in case we can't reach you by phone:</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-60">
+            <label>
+              <input type="email" ng-model="data.emailAddress" restrict-input pattern="{{ emailPattern }}" placeholder="example@email.com" ng-blur="onBlurEmailAddress()" ng-focus="onFocusEmailAddress()" ng-class="{ 'has-error' : !emailValid }">
+            </label>
+          </div>
+        </div>
+        <div class="row error-row">
+          <div class="col">
+            <div class="error-msg" ng-hide="emailValid">Please enter a valid email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rascal-footer-spacer"></div>
+  </ion-content>
+  <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne" callback="validate()"></rascal-footer>
+</ion-view>

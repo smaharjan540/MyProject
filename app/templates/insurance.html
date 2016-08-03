@@ -1,0 +1,132 @@
+<ion-view class="insurance">
+  <ion-content>
+    <rascal-header></rascal-header>
+    <div class="row">
+      <div class="col col-25">
+        <left-pane></left-pane>
+      </div>
+      <div class="col col-65">
+        <div class="row">
+          <div class="col">
+            <h2>INSURANCE</h2>
+          </div>
+        </div>
+        <div class="row" ng-if="nativeApp">
+          <div class="col">
+            Please take a picture of your insurance card.
+          </div>
+        </div>
+        <div class="row" ng-if="nativeApp">
+          <div class="col">
+            <button class="btn btn-unselected" ng-click="toggleTakePhoto()" ng-class="{'btn-selected': data.takePhoto}">Okay</button>
+            <span class="btn-space"></span>
+            <button class="btn btn-unselected" ng-click="toggleTakeDetails()" ng-class="{'btn-selected': data.takeDetails}">I don't have it</button>
+          </div>
+        </div>
+        <div ng-show="data.takePhoto">
+          <div class="row">
+            <div class="col">
+              Take of a photo of each side of your insurance card.
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-25">
+              <div class="mini-image vertical-center" ng-click="clickPicture('FRONT')">
+                <div class="image-content" ng-show="!!data.frontImageBase64String">
+                  <img class="image-capture" ng-src="{{data.frontImageBase64String}}"/>
+                  <img class="image-check-mark" ng-src="images/checkmark.png"/>
+                </div>
+                <div ng-show="!data.frontImageBase64String">
+                  <i class="icon ion-android-add"></i>
+                  <p class="inside-text italic">
+                    Tap to add photo
+                  </p>
+                </div>
+              </div>
+              <div class="text-center">
+                FRONT
+              </div>
+              <div class="spacer"></div>
+              <div class="mini-image vertical-center" ng-click="clickPicture('BACK')">
+                <div class="image-content" ng-show="!!data.backImageBase64String">
+                  <img class="image-capture" ng-src="{{data.backImageBase64String}}"/>
+                  <img class="image-check-mark" ng-src="images/checkmark.png"/>
+                </div>
+                <div ng-show="!data.backImageBase64String">
+                  <i class="icon ion-android-add"></i>
+                  <p class="inside-text italic">
+                    Tap to add photo
+                  </p>
+                </div>
+              </div>
+              <div class="text-center">
+                BACK
+              </div>
+            </div>
+            <div class="col col-offset-5">
+              <div class="image-preview-content">
+                <div class="label-image-preview inside-text italic">
+                  Tap on FRONT or BACK image to see preview or retake photo
+                </div>
+                <img class="image-preview" ng-src="{{imageSide === 'FRONT' ? data.frontImageBase64String : data.backImageBase64String }}" ng-show="imageSide"/>
+              </div>
+              <div class="text-center">{{imageSide}} PREVIEW</div>
+            </div>
+            <div class="col col-10 vertical-center">
+              <div ng-show="imageSide">
+                <img class="retake-icon" ng-src="images/retake-photo.png" ng-click="takePicture()"/>
+                <div class="text-center">
+                  Retake?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form ng-show="data.takeDetails" ng-model-options="{ updateOn: 'blur' }">
+          <div class="row">
+            <div class="col col-30">
+              Insurance Provider Name
+            </div>
+            <div class="col col-50">
+              <label>
+                <input type="text" ng-model="data.name" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+              Contract or Policy Number
+            </div>
+            <div class="col col-30">
+              <label>
+                <input type="text" ng-model="data.policyNumber" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-30">
+              Phone Number
+            </div>
+            <div class="col col-30">
+              <label>
+                <input type="text" phone-input ng-model="data.phoneNumber" placeholder="(xxx) xxx-xxxx" ng-focus="onPhoneNumberFocus()" ng-class="{ 'has-error' : !phoneValid }"/>
+              </label>
+            </div>
+          </div>
+          <div class="row error-row">
+            <div class="col col-30">
+              &nbsp;
+            </div>
+            <div class="col">
+              <span ng-show="!phoneValid">Please enter a valid phone number</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="rascal-footer-spacer"></div>
+  </ion-content>
+  <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne" callback="validate()"></rascal-footer>
+</ion-view>
+

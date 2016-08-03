@@ -1,0 +1,104 @@
+<ion-view class="product-request file-upload">
+    <ion-content>
+        <rascal-header></rascal-header>
+        <div class="row">
+            <div class="col col-25">
+                <left-pane></left-pane>
+            </div>
+            <div class="col col-65">
+                <div class="row">
+                    <div class="col">
+                        <h2>PRODUCT REQUEST</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Would you like to upload the products you'd like to request?
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-unselected" ng-click="toggleProductUpload()" ng-class="{'selected': form.productUpload}">Yes</button>
+                        <span class="btn-space"></span>
+                        <button class="btn btn-unselected" ng-click="toggleProductInfo()" ng-class="{'selected': form.productInfo}">No</button>
+                        <span class="btn-space"></span>
+                        <span class="chkbox-btn">
+                            <img ng-click="filesUploadCheck()" ng-src="{{ selectYes ? 'images/checkbox-full.svg' : 'images/checkbox-empty.svg' }}" class="checkboxImg" />
+                            <span class="checkboxText">Use the file(s) I just uploaded</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                </div>
+                <div class="row" ng-hide="(form.productInfo || form.productUpload)">
+                    <div class="col">
+                        We'll need each product's...
+                        <br/> - Item Number (if known)
+                        <br/> - Detailed Product Description (2" x 2" Gauze Dressing)
+                        <br/> - Quantity (e.g. 1 Box with 12 Gauze Pads)
+                        <br/>
+                        <br/> Note: You won't need to upload the same document again if it has information that applies to multiple sections. So if this is the case, please check "Use the file(s) I just uploaded". You can upload up to four documents.
+                    </div>
+                </div>
+                <div ng-if="form.productUpload">
+                    <div class="row">
+                        <div class="col">
+                            <uploadfiles></uploadfiles>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <span>Note: Please load only files with the following filename extensions: .pdf, prn, .jpg, .jpeg, .tif, .tiff, .bmp</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div ng-repeat="file in files track by $index">
+                            <div class="fileImage" ng-hide="fileImage{{$index}}">
+                                <i class="icon ion-android-delete fileDeleteIcon" ng-click="showConfirm($index,'{{file.fileName}}')"></i>
+                                <i class="icon ion-document-text fileImgIcon"></i>
+                                <br/>
+                                <span class="fileNameTxt">{{file.fileName | truncate : 30}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-if="form.productInfo">
+                    <form ng-model="form.requestedItems" ng-change="checkFormFields()" ng-model-options="{ updateOn: 'blur' }">
+                        <div class="row">
+                            <div class="col col-20">
+                                Item #
+                            </div>
+                            <div class="col col-50">
+                                Product Description
+                            </div>
+                            <div class="col col-30">
+                                Quantity
+                            </div>
+                        </div>
+                        <div class="row" ng-repeat="item in form.requestedItems">
+                            <div class="col col-20">
+                                <input restrict-input type="text" maxlength="12" ng-model="item.itemNumber"/>
+                            </div>
+                            <div class="col col-50">
+                                <input restrict-input type="text" placeholder="{{ item.placeholder ? 'e.g. 2’’ x 2’’ Gauze Dressing' : '' }}" maxlength="64" ng-model="item.description"/>
+                            </div>
+                            <div class="col col-30">
+                                <input restrict-input type="text" placeholder="{{ item.placeholder ? 'e.g. 1 Box with 12 Pads' : '' }}" maxlength="20" ng-model="item.quantity"/>
+                            </div>
+                        </div>
+                        <a href ng-click="addNewItems()" ng-hide="form.itemsAdded">+ Add 5 new lines</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="rascal-footer-spacer"></div>
+    </ion-content>
+    <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne"></rascal-footer>
+</ion-view>

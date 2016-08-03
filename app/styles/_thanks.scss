@@ -1,0 +1,18 @@
+.thanks {
+  ion-content {
+    @extend .red-banner;
+  }
+  .thanks-msg {
+    font-size: 2vw;
+    margin-bottom:2vw;
+  }
+  .note-msg {
+    font-size:1.4vw;
+    margin-top:10vw;
+  }
+  .disclaimer{
+    font-size: 1vw;
+    font-style: italic;
+    color: #9b9b9b;
+  }
+}

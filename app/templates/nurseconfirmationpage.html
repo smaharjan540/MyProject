@@ -1,0 +1,73 @@
+<ion-view class="confirmation">
+    <ion-content>
+        <rascal-header></rascal-header>
+        <div class="row">
+            <div class="col col-25">
+                <left-pane></left-pane>
+            </div>
+            <div class="col col-65">
+                <div class="row">
+                    <div class="col">
+                        <h2>CONFIRMATION</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span>{{ topMsg }}</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-50">
+                        <div class="row bold">Your Details</div>
+                        <div class="row" ng-repeat="detail in nurseDetails">
+                            <span>{{ detail }}</span>
+                        </div>
+                        <div class="row spacer">&nbsp;</div>
+                        <div class="row bold">Patient Information</div>
+                        <div class="row" ng-repeat="info in patientInfo">
+                            <span>{{ info }}</span>
+                        </div>
+
+                        <div class="row spacer">&nbsp;</div>
+                        <div class="row bold">Insurance</div>
+                        <div class="row" ng-repeat="detail in nursePatientInsuranceDetails track by $index">
+                            <span>{{ detail }}</span>
+                        </div>
+                    </div>
+                    <div class="col col-50">
+                        <div class="row bold">Patient's Doctor</div>
+                        <div class="row" ng-repeat="detail in nursePatientDoctorDetails track by $index">
+                            <span>{{ detail | truncate : 80 }}</span>
+                        </div>
+                        <div class="row spacer">&nbsp;</div>
+                        <div class="row bold">Product Request</div>
+                        <div class="row" ng-repeat="requests in productRequests track by $index">
+                            <span>{{ requests }}</span>
+                        </div>
+                        <div class="row spacer">&nbsp;</div>
+                        <div class="row bold">Documents</div>
+                        <div class="row" ng-repeat="document in documents track by $index">
+                            <span>-{{ document.fileName | truncate: 40 }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-10">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row recaptcha-msg-container" ng-if="displayCaptchaMessage()">
+          <div class="col-25">
+            &nbsp;
+          </div>
+          <div class="col-50">
+            For security purposes, please check the box below before clicking 'Finish'.
+          </div>      
+          <div class="col-25">
+            &nbsp;
+          </div>      
+        </div>        
+        <div class="rascal-footer-spacer"></div>
+    </ion-content>
+    <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne" display-re-captcha="true" callback="confirmAndSend()"></rascal-footer>
+</ion-view>

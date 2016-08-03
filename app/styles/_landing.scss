@@ -1,0 +1,59 @@
+.landing {
+  ion-content {
+    @extend .red-banner;
+  }
+
+  ol {
+    list-style: decimal;
+    margin: 0 2*$font-size-body;
+    li {
+      padding-left: $font-size-body/2;
+    }
+  }
+
+  .col-landing-image {
+    max-width: 42.07vw;
+  }
+
+  .main-img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .btn-begin {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  /*
+  .initial-msg {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 8vh;
+  }
+  @media all and (min-width: 2560px) {
+    /!* Galaxy 12.2 is 2560x1600 resolution *!/
+    .initial-msg {
+      font-size: 60px;
+    }
+  }
+  @media all and (max-width: 2559px) {
+    .initial-msg {
+      font-size: 2.4vw;
+    }
+  }
+  .detail-msg {
+    font-size: 1.4vw;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    color: #2e2e2f;
+  }
+  @media all and (min-width: 2560px) {
+    /!* Galaxy 12.2 is 2560x1600 resolution *!/
+    .detail-msg {
+      font-size: 35px;
+    }
+  }*/
+}

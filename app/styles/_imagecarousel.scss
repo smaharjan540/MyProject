@@ -1,0 +1,37 @@
+.image-carousel {
+  $arrow-width: 3.75vw;
+  $image-width: 11.71vw;
+
+  > img, > div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .arrow {
+    width: $arrow-width;
+  }
+
+  .arrow-left {
+    margin-right: 0.5vw;
+  }
+
+  .arrow-right {
+    margin-left: 0.5vw;
+  }
+
+  .slide {
+    margin: 0 2vw;
+
+    img {
+      width: $image-width;
+      margin-bottom: 0.5vw;
+    }
+
+    p {
+      width: $image-width;
+      white-space: nowrap;
+      font-size: $font-size-small;
+      text-align: center;
+    }
+  }
+}

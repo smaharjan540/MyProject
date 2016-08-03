@@ -1,0 +1,12 @@
+.intro {
+  .checkbox-img {
+    margin-right: $font-size-body;
+    width: 1.875vw;
+  }
+  button > span {
+    padding-top: 0.3vw;
+  }
+  button > checkbox {
+    float: left;
+  }
+}

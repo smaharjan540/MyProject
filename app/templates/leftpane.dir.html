@@ -1,0 +1,15 @@
+<div class="left-pane">
+  <ul>
+    <li ng-repeat="menuItem in menuItems">
+      <a ng-click="linkTo(menuItem)">
+        <div class="row" ng-class="classOf(menuItem)">
+          <div class="col">
+            <img class="checkmark" src="images/checkmark.png" />
+            <span>{{ menuItem.label }}</span>
+          </div>
+          <div class="nav-point"></div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

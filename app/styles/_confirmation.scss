@@ -1,0 +1,35 @@
+.confirmation {
+  .spacer {
+    height: 3vh;
+  }
+  .bold {
+    margin-bottom: 0.5vh;
+  }
+  .title-padding-bottom-3 {
+    padding-bottom: 3%;
+  }
+
+  .btn-nav {
+    padding-left:4vw;
+    padding-right:4vw;
+  }
+  .confirmation-img{
+    width: 7vw;
+    height: 5vw;
+    border-radius: 0.2vw;
+    background-color: #d8d8d8;
+    border: solid 1px #979797;
+  }
+  .check-mark-confirmation{
+    width: 2vw;
+    height: 2vw;
+    margin-left: 2.4vw;
+    margin-top: 1.4vw;
+  }
+  .label-confirmation{
+    text-align:center;
+    color: #000000;
+    font-size:1vw;
+    margin-left:2.2vw;
+  }
+}

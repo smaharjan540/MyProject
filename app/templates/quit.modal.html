@@ -1,0 +1,26 @@
+<ion-modal-view class="quit-modal">
+  <ion-content>
+    <div class="row right-align">
+      <div class="close-icon" ng-click="closeQuitModal()">
+        <i class="icon ion-android-close"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        <p class="title-text">Are you sure you want to quit?</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        <p>You will lose the information that you’ve entered and won’t be able to return to where you left off.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-ie-80 col-offset-10">
+        <button class="btn btn-nav" ng-click="quitSession()">Yes, quit this process</button>
+        <span class="btn-space"></span>
+        <button class="btn btn-unselected" ng-click="closeQuitModal()">No, keep going</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

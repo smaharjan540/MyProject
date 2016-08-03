@@ -1,0 +1,81 @@
+.left-pane {
+    $checkmark-width: 2vw;
+    $row-height: 3.75vw;
+    font-size: $font-size-body !important;
+
+    ul {
+        margin: 0;
+        padding: 0 0 0 20%;
+    }
+    div.row > div {
+        height: $row-height;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .checkmark {
+        width: $checkmark-width;
+        height: $checkmark-width;
+        margin: auto 1vw auto 0;
+    }
+
+    .active {
+        cursor: pointer;
+
+        .checkmark {
+            visibility: visible;
+        }
+    }
+    .dormant {
+        color: $font-color;
+        font-family: $font-family-bolder;
+        font-weight: normal;
+
+        .checkmark {
+            visibility: hidden;
+        }
+    }
+    .current {
+        font-weight: bold;
+        .col {
+            background-color: $background-nav;
+        }
+        .nav-point {
+            // Set width to ratio of image size * height
+            height: $row-height;
+            width: 0.39583330718914 * $row-height;
+            background: url("../images/nav-arrow-tip.svg") no-repeat;
+            background-size: auto $row-height;
+        }
+    }
+    /*
+    .left_pane_menu_item {
+        height: 8vh;
+        line-height: 8vh;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-weight: normal;
+        vertical-align: top;
+        text-align: left;
+        display: inline-block;
+        position: relative;
+    }
+    @media all and (min-width: 2559px) {
+        .left_pane_font {
+            font-size: 40px;
+        }
+    }
+    @media all and (min-height: 1600px) {
+        .left_pane_menu_item,
+        .left_pane_menu_item_selected {
+            height: 125px;
+            line-height: 125px;
+        }
+    }
+    */
+}

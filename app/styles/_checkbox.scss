@@ -1,0 +1,25 @@
+.checkbox-dir {
+  $checkbox-size: 2.93vw;
+
+  height: $checkbox-size;
+  position: relative;
+
+  .checkbox-img {
+    width: $checkbox-size;
+    height: $checkbox-size;
+  }
+  
+  .checkbox-label {
+    font-family: $font-family-bolder;
+    position: absolute;
+    top: 0;
+    left: $checkbox-size + 1vw;
+  }
+
+  .checkbox-subtext {
+    position: absolute;
+    bottom: 0;
+    left: $checkbox-size + 1vw;
+    font-size: $font-size-small;
+  }
+}

@@ -1,0 +1,6 @@
+.store-id {
+  ion-content {
+    @extend .red-banner;
+  }
+  font-size: $font-size-big;
+}

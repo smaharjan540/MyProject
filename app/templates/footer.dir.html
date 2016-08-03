@@ -1,0 +1,24 @@
+<div class="rascal-footer">
+  <div class="row recaptcha-msg-container" ng-if="displayCaptchaMessage()">
+    <div class="col col-20"></div>
+    <div class="col col-60">
+      For security purposes, please check the box below before clicking 'Finish'.
+    </div>
+    <div class="col col-20"></div>
+  </div>
+  <div class="row">
+    <div class="col col-offset-25">
+      <div class="recaptcha-container">
+        <div id="recaptchaplaceholder" ng-if="onDisplayReCaptcha()"></div>
+        <span class="btn-space"></span>
+        <button class="btn btn-nav" ng-show="btnIndexZero.visible" ng-disabled="btnIndexZero.disabled" ng-click="onClickBtnZero()">
+          {{ btnIndexZero.title || 'Continue' }}
+        </button>
+        <span class="btn-space"></span>
+        <button class="btn btn-unselected" ng-show="btnIndexOne.visible" ng-disabled="btnIndexOne.disabled" ng-click="onClickBtnOne()">
+          {{ btnIndexOne.title || '< Go Back' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

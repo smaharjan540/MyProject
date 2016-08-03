@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-left-drop-circle copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Wireframes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing" transform="translate(-2254.000000, -1299.000000)" fill="#CBB989">
+            <g id="arrow-left-drop-circle-copy" transform="translate(2302.000000, 1347.000000) scale(-1, 1) translate(-2302.000000, -1347.000000) translate(2254.000000, 1299.000000)">
+                <path d="M96,48 C96,74.509668 74.509668,96 48,96 C35.2696085,96 23.0606207,90.9428717 14.0588745,81.9411255 C5.05712834,72.9393793 1.0658141e-15,60.7303915 0,48 C-6.39488462e-15,35.2696085 5.05712834,23.0606207 14.0588745,14.0588745 C23.0606207,5.05712834 35.2696085,2.13162821e-15 48,0 C60.7303915,-5.32907052e-15 72.9393793,5.05712834 81.9411255,14.0588745 C90.9428717,23.0606207 96,35.2696085 96,48 L96,48 Z M57.6,24 L33.6,48 L57.6,72 L57.6,24 L57.6,24 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

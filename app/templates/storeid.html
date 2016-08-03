@@ -1,0 +1,24 @@
+<ion-view class="store-id">
+  <ion-content>
+    <img class="logo-alt" src="images/MedConnectLogoWhite.svg"/>
+    <div class="row spacer"></div>
+    <div class="row">
+      <div class="col col-offset-10">
+        <p>A store number has not been found on this device.</p>
+        <p>Please enter the Wal-Mart store number.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-40 col-offset-10">
+        <label>
+          <input restrict-input type="text" ng-model="info.storeId" />
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-offset-10">
+        <button class="btn btn-nav" ng-click="enterStoreId()">Enter</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

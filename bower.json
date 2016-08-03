@@ -1,0 +1,21 @@
+{
+  "name": "rascal",
+  "version": "0.1.0",
+  "dependencies": {
+    "ionic": "v1.1.0",
+    "ngCordova": "v0.1.26-alpha",
+    "jquery": "~1.9",
+    "ng-pattern-restrict": "~0.2.2",
+    "angular-idle-service": "^1.0.4",
+    "jquery.inputmask": "2.5.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.4.9",
+    "angular-scenario": "1.4.9",
+    "jquery": "~1.9"
+  },
+  "resolutions": {
+    "angular": "1.4.9",
+    "ngCordova": "^0.1.26-alpha"
+  }
+}

@@ -1,0 +1,29 @@
+.tnc-modal {
+  $header-height: $font-size-body * 6;
+  width: 40%;
+  height: 76%;
+  margin-left: 10%;
+  margin-top: -5%;
+
+  ul {
+    list-style: disc;
+    margin-left: $font-size-body;
+  }
+  ol {
+    list-style: lower-alpha;
+    margin-left: $font-size-big;
+  }
+
+  .modal-header, .modal-footer {
+    height: $header-height;
+    border: 0 !important;
+    background-image: none !important;
+    border-bottom: none !important;
+  }
+  .has-header {
+    top: $header-height;
+  }
+  .has-footer {
+    bottom: $header-height;
+  }
+}

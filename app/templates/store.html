@@ -1,0 +1,28 @@
+<ion-view class="store">
+    <ion-content>
+        <rascal-header></rascal-header>
+        <div class="row">
+            <div class="col col-25"></div>
+            <div class="col col-75">
+                <div class="row">
+                    <div class="col">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <span>Please enter store number:</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-40 input-text-container">
+                        <label>
+                            <input restrict-input type="text" name="storeId" ng-model="storeId" maxlength="4" class="input-text-width-19"/>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rascal-footer-spacer"></div>
+    </ion-content>
+    <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne"></rascal-footer>
+</ion-view>

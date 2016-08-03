@@ -1,0 +1,26 @@
+<ion-modal-view class="timeout-modal">
+  <ion-content>
+    <div class="row right-align">
+      <div class="close-icon" ng-click="closeTimeoutModal()">
+        <i class="icon ion-android-close"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        <p class="title-text">Your session is about to timeout</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        For your safety and health privacy, this session will reset in 60 seconds unless you are still working on it. Would you like more time?
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        <button class="btn btn-nav" ng-click="closeTimeoutModal()">Yes, I'm still working</button>
+        <span class="btn-space"></span>
+        <button class="btn btn-unselected" ng-click="quitSession()">No, please quit</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

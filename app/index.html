@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/ionic/release/css/ionic.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!--Styles no longer need to be included here. They should be imported in the main.scss file-->
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/rascal.css" rel="stylesheet">
+    <link href="styles/ie/ie10.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="styles/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/ionic/release/js/ionic.js"></script>
+    <script src="bower_components/ionic/release/js/ionic-angular.js"></script>
+    <script src="bower_components/ngCordova/dist/ng-cordova.js"></script>
+    <script src="bower_components/ng-pattern-restrict/src/ng-pattern-restrict.js"></script>
+    <script src="bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="cordova_plugins.js"></script>
+
+    <script src="bower_components/angular-idle-service/dist/angular-idle-service.js"></script>
+    <script src="bower_components/jquery.inputmask/js/jquery.inputmask.js"></script>    
+    <script src="bower_components/jquery.inputmask/js/jquery.inputmask.date.extensions.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- your app's js -->
+    <!-- build:js scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="scripts/controllers/cameractrl.js"></script>
+    <script src="scripts/controllers/storeidctrl.js"></script>
+    <script src="scripts/controllers/landingctrl.js"></script>
+    <script src="scripts/controllers/introctrl.js"></script>
+    <script src="scripts/controllers/startrequestctrl.js"></script>
+    <script src="scripts/controllers/patientneedsctrl.js"></script>
+    <script src="scripts/controllers/confirmationctrl.js"></script>
+    <script src="scripts/controllers/patientinfoctrl.js"></script>
+    <script src="scripts/controllers/contactdetailsctrl.js"></script>
+    <script src="scripts/controllers/doctorinfoctrl.js"></script>
+    <script src="scripts/controllers/insurancectrl.js"></script>
+    <script src="scripts/controllers/thanksctrl.js"></script>
+    <script src="scripts/controllers/nursedetailsctrl.js"></script>
+    <script src="scripts/controllers/nursepatientinfoctrl.js"></script>
+    <script src="scripts/controllers/nursepatientinsurancectrl.js"></script>
+    <script src="scripts/controllers/nursepatientdoctorctrl.js"></script>
+    <script src="scripts/controllers/uploadctrl.js"></script>
+    <script src="scripts/controllers/productrequestctrl.js"></script>
+    <script src="scripts/services/dataservice.js"></script>
+    <script src="scripts/services/flowservice.js"></script>
+    <script src="scripts/services/payloadservice.js"></script>
+    <script src="scripts/services/ieservice.js"></script>
+    <script src="scripts/directives/checkbox.js"></script>
+    <script src="scripts/directives/rascalheader.js"></script>
+    <script src="scripts/directives/rascalfooter.js"></script>
+    <script src="scripts/directives/leftpanedir.js"></script>
+    <script src="scripts/directives/phoneinput.js"></script>
+    <script src="scripts/directives/numbersonlyvalidator.js"></script>
+    <script src="scripts/directives/stateinputvalidator.js"></script>
+    <script src="scripts/directives/capitalize.js"></script>
+    <script src="scripts/directives/restrictinput.js"></script>
+    <script src="scripts/directives/fileselect.js"></script>
+    <script src="scripts/directives/imagecarousel.js"></script>
+    <script src="scripts/directives/uploadfiles.js"></script>
+    <script src="scripts/filters/truncatefilter.js"></script>
+    <script src="scripts/configuration.js"></script>
+    <script src="scripts/upload.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div id="recaptchahidden">
+      <div id="recaptcha" class="g-recaptcha" data-sitekey="6LcL_yQTAAAAABQZzJ4sU1omFDSyMkuPEn0xU0IA" data-callback="captchaVerifyCallback"></div>
+    </div>
+    <ion-pane ng-app="rascal" ng-controller="CameraCtrl"> <!-- ion-pane is used to fit content to view port //-->
+      <ion-nav-view> <!-- add your content here, attributes p. 124 in Learning Ionic.pdf //-->
+      </ion-nav-view>
+    </ion-pane>
+  </body>
+</html>
+
+<!--
+        <div class="row">
+          <div class="col">
+            <button class="button button-calm button-full" ng-click="getPicture(1)">Show Camera</button>
+          </div>
+          <div class="col">
+            <button class="button button-calm button-full" ng-click="getPicture(0)">Show Album</button>
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            <ion-toggle ng-model="item.destinationFileURI" toggle-class="toggle-calm" ng-click="clickToggle()">Return image file URI</ion-toggle>
+          </li>
+          <li>
+            <div class="item item-icon-left" style="background-color: #f8f8f8;">
+              <i class="icon ion-link"></i>
+              <ion-scroll direction="x">
+                {{ item.imagePath }}
+              </ion-scroll>
+            </div>
+          </li>
+        </ul>
+        <img ng-src="{{ item.data }}" width="100%">
+//-->

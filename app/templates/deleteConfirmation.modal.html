@@ -1,0 +1,30 @@
+<ion-modal-view class="confirm-delete-modal">
+  <ion-header-bar class="modal-header">
+    <div class="col col-offset-10 col-bottom">
+      <span class="title-text">Remove file?</span>
+    </div>
+    <div class="col">
+      <div class="close-icon" ng-click="closeModal()">
+        <i class="icon ion-android-close"></i>
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-content class="has-header has-footer">
+    <div class="col col-80 col-offset-10">
+      <div class="">Are you sure that you want to remove the file?</div>
+      <div>{{ fileName }}</div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="modal-footer col-50 col-offset-20">
+    <div class="row row-bottom">
+      <div class="col btn-center">
+        <button class="btn btn-unselected btn-confirm" ng-click="deleteFile()">Remove</button>
+      </div>
+    </div>
+    <div class="row row-bottom">
+      <div class="col btn-center">
+        <button class="btn btn-unselected btn-cancel" ng-click="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </ion-footer-bar>
+</ion-modal-view>

@@ -1,0 +1,29 @@
+<ion-modal-view class="error-modal">
+  <ion-content>
+    <div class="row right-align">
+      <div class="close-icon" ng-click="closeModal()">
+        <i class="icon ion-android-close"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        <p class="title-text">Upload was unsuccessful</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-80 col-offset-10">
+        {{ errorMessage }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        &nbsp;
+      </div>
+    </div>
+    <div class="row row-bottom">
+      <div class="col btn-center">
+        <button class="btn btn-unselected" ng-click="closeModal()">Close</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

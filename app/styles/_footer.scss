@@ -1,0 +1,30 @@
+.rascal-footer {
+    height: $footer-size;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: $background-nav;
+    display: flex;
+    align-items: center;
+
+    .recaptcha-container {
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      -webkit-flex-direction: row; /* works with row or column */
+      -webkit-align-items: center;
+      align-items: center;  
+    }
+
+    .recaptcha-msg-container {
+      color: $font-color;
+      font-size: inherit;
+      text-align: center;
+      position: absolute;
+      top: -36px;
+      left: 0;
+      right: 0;      
+    }    
+}

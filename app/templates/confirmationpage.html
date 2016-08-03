@@ -1,0 +1,75 @@
+<ion-view class="confirmation">
+  <ion-content>
+    <rascal-header></rascal-header>
+    <div class="row" >
+      <div class="col col-25">
+        <left-pane></left-pane>
+      </div>
+      <div class="col col-65">
+        <div class="row">
+          <div class="col">
+            <h2>CONFIRMATION</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>{{ topMsg }}</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="row bold">
+              Product Needs
+            </div>
+            <div class="row">
+              <span>{{ patientNeeds | truncate : 170 }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <div class="row bold">Patient Information</div>
+            <div class="row" ng-repeat="info in patientInfo">
+              <span>{{ info }}</span>
+            </div>
+            <div class="row spacer">&nbsp;</div>
+            <div class="row bold">Contact Details</div>
+            <div class="row" ng-repeat="detail in contactDetails">
+              <span>{{ detail }}</span>
+            </div>
+          </div>
+          <div class="col col-50">
+            <div class="row bold">Doctor</div>
+            <div class="row" ng-repeat="info in doctorInfo">
+              <span>{{ info | truncate : 80 }}</span>
+            </div>
+            <div class="row spacer">&nbsp;</div>
+            <div class="row bold">Insurance</div>
+            <div class="row" ng-repeat="info in insurance" ng-if="!takePhoto">
+              <span>{{ info }}</span>
+            </div>
+            <div class="row" ng-if="takePhoto">
+              <div class="col-25">
+                <div class="confirmation-img">
+                  <img class="check-mark-confirmation" ng-src="images/checkmark.png"/>
+                </div>
+                <label class="label-confirmation">FRONT</label>
+              </div>
+              <div class="col-25">
+                <div class="confirmation-img">
+                  <img class="check-mark-confirmation" ng-src="images/checkmark.png"/>
+                </div>
+                <label class="label-confirmation">BACK</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col col-10">
+        &nbsp;
+      </div>
+    </div>
+    <div class="rascal-footer-spacer"></div>    
+  </ion-content>
+  <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne" display-re-captcha="true" callback="confirmAndSend()"></rascal-footer>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view class="intro">
+    <ion-content>
+        <rascal-header></rascal-header>
+        <div class="row">
+            <div class="col col-25">
+                <left-pane></left-pane>
+            </div>
+            <div class="col col-75">
+                <div class="row">
+                    <div class="col">
+                        <h2>INTRODUCTION</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>Before we can continue, please accept the following:</p>
+                        <a href ng-click="showPolicy()">Privacy Policy</a><br/>
+                        <a href ng-click="showTerms()">Terms of Use</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col col-60">
+                        <button class="btn btn-unselected btn-full vertical-center" ng-click="acceptTerms()">
+                            <checkbox value="accept" uncontrolled></checkbox><span>I have read and accept the Privacy Policy and Terms of Use</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rascal-footer-spacer"></div>
+    </ion-content>
+    <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne"></rascal-footer>
+</ion-view>

@@ -1,0 +1,60 @@
+.patient-needs {
+    .row1 {
+        height: 18vw;
+    }
+    .row2 {
+        height: 20.6vw;
+    }
+
+    .row1, .row2 {
+        > .col {
+            height: 100%;
+        }
+    }
+
+    .category-item {
+        height: 100%;
+        border: 1px solid $button-border;
+        border-radius: $button-border-radius;
+        padding: 0 0.5vw $font-size-small;
+        cursor: pointer;
+        position: relative;
+    }
+    .category-special {
+        height: 100%;
+        width: 100%;
+        padding: $font-size-small 0.5vw;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .category-checkbox {
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+    }
+    .category-image {
+        width: 55%;
+        margin-top: 1vw;
+    }
+    .category-title {
+        font-family: $font-family-bolder;
+        margin-bottom: 0.4vw;
+    }
+    .category-details {
+        font-family: $font-family-bolder;
+        font-size: $font-size-smaller;
+        color: $font-color-light;
+    }
+    .category-textarea {
+        position: absolute;
+        top: 7.6 * $font-size-smaller;
+        bottom: 0;
+        left: 0.5vw;
+        right: 0.5vw;
+
+        textarea {
+            height: 100%;
+        }
+    }
+}

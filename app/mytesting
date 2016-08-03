@@ -1,0 +1,35 @@
+  $scope.init = function(){
+    if (!DataService.nurseDetails) {
+        DataService.nurseDetails = {};
+        DataService.nurseDetails.name="Sujan Maharjan";
+        DataService.nurseDetails.phoneNumber="6414514411";
+        DataService.nurseDetails.facility="Information Control";
+        DataService.nurseDetails.city="Columbus";
+        DataService.nurseDetails.state="OH";
+    }
+    if (!DataService.patientInfo) {
+        DataService.patientInfo ={};
+        DataService.patientInfo.name="Sujan Maharjan";
+        DataService.patientInfo.address1="1000 N 4th Street";
+        DataService.patientInfo.address2="Nevis Drive";
+        DataService.patientInfo.city="Fairfield";
+        DataService.patientInfo.state="IA";
+        DataService.patientInfo.zip="52557"
+        DataService.patientInfo.gender="Male";
+        DataService.patientInfo.dob="12/12/1986";
+    }
+    if (!DataService.doctorInfo) {
+        DataService.doctorInfo ={};
+        DataService.doctorInfo.name="Suman Maharjan";
+        DataService.doctorInfo.phoneNumber="6414513001";
+        DataService.doctorInfo.address="5160 Amity Moor Rood";
+        DataService.doctorInfo.diagnosis="XXXXXXX";
+    }
+    if (!DataService.insurance) {
+        DataService.insurance ={};
+        DataService.insurance.name="Nation Wide";
+        DataService.insurance.policyNumber="PPPPPPP";
+        DataService.insurance.groupNumber="GGGGGGGG";
+        DataService.insurance.phoneNumber="6414514411";
+    }
+  };

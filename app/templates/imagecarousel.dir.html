@@ -1,0 +1,8 @@
+<div class="image-carousel">
+  <img class="arrow arrow-left" src="images/carousel/arrow-left.svg" ng-click="cycleLeft()" />
+  <div ng-repeat="image in images" class="slide">
+    <img ng-src="{{ image.url }}"/>
+    <p>{{ image.subtext }}</p>
+  </div>
+  <img class="arrow arrow-right" src="images/carousel/arrow-right.svg" ng-click="cycleRight()" />
+</div>

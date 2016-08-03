@@ -1,0 +1,64 @@
+<ion-view class="patient-needs">
+  <ion-content>
+    <rascal-header></rascal-header>
+    <div class="row">
+      <div class="col col-25">
+        <left-pane></left-pane>
+      </div>
+      <div class="col col-70">
+        <div class="row">
+          <div class="col">
+            <h2>PRODUCT NEEDS</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div>What kinds of items are you interested in?</div>
+            <div class="emphasized">Select all that apply.</div>
+          </div>
+        </div>
+        <div class="row row1">
+          <div class="col col-25" ng-click="onClick(category.id)" ng-repeat="category in display.row1">
+            <div class="category-item text-center">
+              <checkbox class="category-checkbox" value="category.checkboxValue" uncontrolled></checkbox>
+              <img class="category-image" ng-src="{{category.image}}"/>
+              <div class="category-title">
+                {{ category.title }}
+              </div>
+              <div class="category-details">
+                {{ category.details }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row2">
+          <div class="col col-25" ng-click="onClick(category.id)" ng-repeat="category in display.row2">
+            <div class="category-item text-center">
+              <checkbox class="category-checkbox" value="category.checkboxValue" uncontrolled></checkbox>
+              <img class="category-image" ng-src="{{category.image}}"/>
+              <div class="category-title">
+                {{ category.title }}
+              </div>
+              <div class="category-details">
+                {{ category.details }}
+              </div>
+            </div>
+          </div>
+          <div class="col col-25">
+            <div class="category-special">
+              <div class="category-details">
+                If you have any special product requests, you may write them below:
+                <br><br>(These comments are optional.)
+              </div>
+              <div class="category-textarea">
+                <textarea ng-model="needs.specialRequest"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rascal-footer-spacer"></div>
+  </ion-content>
+  <rascal-footer btn-index-zero="btnIndexZero" btn-index-one="btnIndexOne"></rascal-footer>
+</ion-view>
