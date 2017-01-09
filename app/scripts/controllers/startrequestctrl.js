@@ -1,10 +1,26 @@
 'use strict';
 
-angular.module('rascal').controller('StartRequestCtrl', function($scope, DataService, $idle) {
+angular.module('rascal').controller('StartRequestCtrl', function($scope, DataService, $idle, $ionicModal) {
 
+    $ionicModal.fromTemplateUrl('templates/demo.modal.html', {
+                scope: $scope,
+                animation: 'slide-in-up'
+            }).then(function(modal) {
+                $scope.demoModal = modal;
+            });
   $scope.init = function () {
     $idle.watch();    
   };
+
+  $scope.numbers='';
+
+  $scope.showDemoModal = function () {
+                  $scope.demoModal.show();
+              };
+
+              $scope.closeDemoModal = function () {
+                  $scope.demoModal.hide();
+              };
 
   if (!DataService.startRequest) {
     DataService.startRequest = {};

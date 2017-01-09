@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('rascal').controller('LandingCtrl', function($scope) {
+
   $scope.carouselData = [
     {
       url: 'images/carousel/Diabetes.jpg',

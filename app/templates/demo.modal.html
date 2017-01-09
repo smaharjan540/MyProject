@@ -1,0 +1,77 @@
+<style>
+    .main{
+        height: 5vh;
+    }
+    .bar{
+        background-color: #EDECF3;
+        height: 5vh;
+    }
+    .numpad .temp{
+        position: absolute;
+        top: 12vh;
+    }
+    .numpad .keypad{
+        position: absolute;
+        top: 26vh;
+    }
+    .key-col {
+        padding:0px;
+    }
+    .keypad {
+        float:left;
+    }
+    .keypad button{
+        width:13.3vw;
+        height:9vh;
+    }
+    .temp{
+        float:left;
+    }
+    .quit-modal{
+        height: 60%;
+    }
+    .keypad .row{
+        padding: 0px;
+    }
+    .in label{
+        font-size: 4vw;
+        margin-left: 10vw;
+    }
+    .out label{
+        margin-left: 17vw;
+    }
+</style>
+<ion-modal-view class="quit-modal">
+    <ion-content>
+        <div>
+        <div class="row main">
+            <div class="col col-25">
+                <a href="">Cancel</a>
+            </div>
+            <div class="col col-50">
+                <label>Vitals</label>
+            </div>
+            <div class="col col-25">
+                <a href="">Add</a>
+            </div>
+        </div>
+        <div class="row bar">
+
+        </div>
+        <div class="row numpad">
+            <div class="temp">
+                <div class="in">
+                    <label>Temperature</label>
+                </div>
+                <div class="out">
+                    <label>{{numbers}}</label>
+                </div>
+            </div>
+
+        </div>
+            <div class="numpad">
+                <keypad value="numbers"></keypad>
+            </div>
+    </div>
+    </ion-content>
+</ion-modal-view>
