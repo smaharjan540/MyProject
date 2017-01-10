@@ -1,47 +1,42 @@
-<div class="keypad">
-    <div class="row">
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="1" ng-click="addNum(1)">1</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="2" ng-click="addNum(2)">2</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="3" ng-click="addNum(3)">3</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="4" ng-click="addNum(4)">4</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="5" ng-click="addNum(5)">5</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="6" ng-click="addNum(6)">6</button>
-        </div>
+<style>
+    .keypad{
+        color:#000000;
+    }
+    .keypad-btn {
+        width:10vw;
+        height:10vh;
+    }
+    .btn-primary {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+        color:#000000;
+    }
+    .btn{
 
+    }
+    .mobile-added{
+
+    }
+</style>
+<div class="keypad" ng-init="init()">
+    <div class="keypad-row">
+        <button class="keypad-btn" type="button" value="1" ng-click="addNum(1)">1</button>
+        <button class="keypad-btn" type="button" value="2" ng-click="addNum(2)">2</button>
+        <button class="keypad-btn" type="button" value="3" ng-click="addNum(3)">3</button>
     </div>
-    <div class="row">
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="7" ng-click="addNum(7)">7</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="8" ng-click="addNum(8)">8</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="9" ng-click="addNum(9)">9</button>
-        </div>
+    <div class="keypad-row">
+        <button class="keypad-btn" type="button" value="4" ng-click="addNum(4)">4</button>
+        <button class="keypad-btn" type="button" value="5" ng-click="addNum(5)">5</button>
+        <button class="keypad-btn" type="button" value="6" ng-click="addNum(6)">6</button>
     </div>
-    <div class="row">
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="." ng-click="addDecimal()">.</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button" value="0" ng-click="addNum(0)">0</button>
-        </div>
-        <div class="col key-col">
-            <button class="keypad-btn" type="button"ng-click="deleteLastNum()"><-</button>
-        </div>
+    <div class="keypad-row">
+        <button class="keypad-btn" type="button" value="7" ng-click="addNum(7)">7</button>
+        <button class="keypad-btn" type="button" value="8" ng-click="addNum(8)">8</button>
+        <button class="keypad-btn" type="button" value="9" ng-click="addNum(9)">9</button>
+    </div>
+    <div class="keypad-row">
+        <button class="keypad-btn" type="button" value="." ng-click="addDecimal()">.</button>
+        <button class="keypad-btn" type="button" value="0" ng-click="addNum(0)">0</button>
+        <button class="keypad-btn" type="button"ng-click="deleteLastNum()"><-</button>
     </div>
 </div>

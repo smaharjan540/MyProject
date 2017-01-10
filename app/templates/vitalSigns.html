@@ -1,0 +1,15 @@
+<div class="vital-modal">
+    <div class="row vital-header-row">
+        <div class="col-xs-4 vital-cancel">
+            <a href="" ng-click="close()">Cancel</a>
+        </div>
+        <div class="col-xs-4 vital-title">
+            {{title}}
+        </div>
+        <div class="col-xs-4 vital-add">
+            <a href=""ng-click="add()">Add</a>
+        </div>
+    </div>
+    <div class="row spacer-row"></div>
+    <div class="vital-content" ng-transclude></div>
+</div>

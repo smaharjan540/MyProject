@@ -7,11 +7,17 @@
 // takes a model called value and changes it with a keypad for other inputs to consume
     function keypad() {
         return {
+            restrict: 'E',
             templateUrl: 'templates/keypad.html',
             controller: keypadCtrl,
+            replace: true,
             scope: {
                 value: "=",
                 hideDecimal: "@"
+            },
+            link: function(scope, elem, attr, ctrl){
+                console.log(scope);
+                console.log(ctrl);
             }
         };
     }

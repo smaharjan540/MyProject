@@ -1,7 +1,7 @@
 'use strict';
 
 // Ionic Rascal App
-var rascalApp = angular.module('rascal', ['ionic', 'ngCordova', 'rascal.templates', '$idle']);
+var rascalApp = angular.module('rascal', ['ui.bootstrap','ionic', 'ngCordova', 'rascal.templates', '$idle']);
 
 rascalApp.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider, $idleProvider) {
 
@@ -16,115 +16,14 @@ rascalApp.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvi
     $idleProvider.autoResume(true);
 
     $stateProvider
-        .state('storeId',
-        {
-            url: '/storeid',
-            templateUrl: 'templates/storeid.html',
-            controller: 'StoreIdCtrl'
-        })
         .state('landing',
         {
             url: '/landing',
             templateUrl: 'templates/landing.html',
             controller: 'LandingCtrl'
-        })
-        .state('startRequest',
-        {
-            url: '/startrequest',
-            templateUrl: 'templates/startrequest.html',
-            controller: 'StartRequestCtrl'
-        })
-        .state('intro',
-        {
-            url: '/intro',
-            templateUrl: 'templates/intro.html',
-            controller: 'IntroCtrl'
-        })
-        .state('patientNeeds',
-        {
-            url: '/patientneeds',
-            templateUrl: 'templates/patientneeds.html',
-            controller: 'PatientNeedsCtrl'
-        })
-        .state('patientInfo',
-        {
-            url: '/patientinfo',
-            templateUrl: 'templates/patientinfo.html',
-            controller: 'PatientInfoCtrl'
-        })
-        .state('contactDetails',
-        {
-            url: '/contactdetails',
-            templateUrl: 'templates/contactdetails.html',
-            controller: 'ContactDetailsCtrl'
-        })
-        .state('doctorInfo',
-        {
-            url: '/doctorinfo',
-            templateUrl: 'templates/doctorinfo.html',
-            controller: 'DoctorInfoCtrl'
-        })
-        .state('insurance',
-        {
-            url: '/insurance',
-            templateUrl: 'templates/insurance.html',
-            controller: 'InsuranceCtrl'
-        })
-        .state('confirmation',
-        {
-            url: '/confirmation',
-            templateUrl: 'templates/confirmationpage.html',
-            controller: 'ConfirmationCtrl'
-        })
-        .state('thanks',
-        {
-            url: '/thanks',
-            templateUrl: 'templates/thanks.html',
-            controller: 'ThanksCtrl'
-        })
-        .state('nurseDetails',
-        {
-            url: '/nursedetails',
-            templateUrl: 'templates/nursedetails.html',
-            controller: 'NurseDetailsCtrl'
-        })
-        .state('nursePatientInfo',
-        {
-            url: '/nursepatientinfo',
-            templateUrl: 'templates/nursepatientinfo.html',
-            controller: 'NursePatientInfoCtrl'
-        })
-        .state('nursePatientInsurance',
-        {
-            url: '/nursepatientinsurance',
-            templateUrl: 'templates/nursepatientinsurance.html',
-            controller: 'NursePatientInsuranceCtrl'
-        })
-        .state('productRequest',
-        {
-            url: '/productrequest',
-            templateUrl: 'templates/productrequest.html',
-            controller: 'ProductRequestCtrl'
-        })
-        .state('nursePatientDoctor',
-        {
-            url: '/nursepatientdoctor',
-            templateUrl: 'templates/nursepatientdoctor.html',
-            controller: 'NursePatientDoctorCtrl'
-        })
-        .state('nurseConfirmation',
-        {
-            url: '/nurseconfirmation',
-            templateUrl: 'templates/nurseconfirmationpage.html',
-            controller: 'ConfirmationCtrl'
         });
     $urlRouterProvider.otherwise(function () {
-        if (window.ionic.Platform.platform() === 'android' && !window.localStorage.getItem('rascal-store-id')) {
-            return '/storeid';
-        }
-        else {
-            return '/landing';
-        }
+           return '/landing';
     });
 });
 
