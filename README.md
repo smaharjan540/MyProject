@@ -1,5 +1,5 @@
 # My-Project
-Ionic client for My-project
+Ionic client for My-project///
 
 Getting started with this project will need the following installed:
 
